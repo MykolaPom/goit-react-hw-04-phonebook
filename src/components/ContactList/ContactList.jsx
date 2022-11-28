@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonDelete } from 'components/ContactList/ContactList.styled';
 
-export const ContactList = ({ contacts, contactDelete }) => {
+export const ContactList = ({ contactList, deleteContact }) => {
+  
   return (
     <ul>
-      {contacts.map(contact => (
-        <li key={contact.id}>
-          {contact.name}:<span>{contact.number}</span>
-          <ButtonDelete id={contact.id} onClick={contactDelete}>
+      {contactList.map(({id, name, number}) => (
+        <li key={id}>
+          {name}:<span>{number}</span>
+          <ButtonDelete id={id} onClick={deleteContact}>
             Delete
           </ButtonDelete>
         </li>
