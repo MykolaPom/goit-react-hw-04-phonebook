@@ -65,7 +65,7 @@ export const App = () => {
 
       <ContactList
         contactList={filteredContacts()}
-        contactDelete={onClickDelete}
+        deleteContact={onClickDelete}
       />
     </MainContainer>
   );
