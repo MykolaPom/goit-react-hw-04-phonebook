@@ -1,7 +1,6 @@
-import { ContactForm } from './ContactForm/ContactFormHooks';
+import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import Filter from './Filter/Filter';
-// import { Component } from 'react';
 import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import { MainContainer } from './Main/Main';
@@ -12,13 +11,9 @@ export const App = () => {
   );
 
   const [filter, setFilter] = useState('');
-
-    // useEffect(() => {
-    //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
-    // }, [contacts]);
   
     useEffect(() => {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
+      window.localStorage.setItem('contacts', JSON.stringify(contacts));
     }, [contacts]);
 
   const addContact = ({ name, number }) => {
